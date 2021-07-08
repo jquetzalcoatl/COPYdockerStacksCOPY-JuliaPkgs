@@ -86,6 +86,7 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("HDF5")' && \
     julia -e 'import Pkg; Pkg.add("Plots")' && \
     julia -e 'import Pkg; Pkg.add("DelimitedFiles")' && \
+    julia -e 'import Pkg; Pkg.add("Statistics")' && \
     julia -e 'using Pkg; pkg"add IJulia"; pkg"precompile"' && \
     # move kernelspec out of home \
     mv "${HOME}/.local/share/jupyter/kernels/julia"* "${CONDA_DIR}/share/jupyter/kernels/" && \
