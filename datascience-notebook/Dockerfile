@@ -14,11 +14,9 @@ USER root
 # Default values can be overridden at build time
 # (ARGS are in lower case to distinguish them from ENV)
 # Check https://julialang.org/downloads/
-#ARG julia_version="1.6.1"
-ARG julia_version="1.0.5"
+ARG julia_version="1.6.1"
 # SHA256 checksum
-#ARG julia_checksum="7c888adec3ea42afbfed2ce756ce1164a570d50fa7506c3f2e1e2cbc49d52506"
-ARG julia_checksum = "9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03"
+ARG julia_checksum="7c888adec3ea42afbfed2ce756ce1164a570d50fa7506c3f2e1e2cbc49d52506"
 
 # R pre-requisites
 RUN apt-get update --yes && \
