@@ -87,6 +87,10 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("Plots")' && \
     julia -e 'import Pkg; Pkg.add("DelimitedFiles")' && \
     julia -e 'import Pkg; Pkg.add("Statistics")' && \
+    julia -e 'import Pkg; Pkg.add("CSV")' && \
+    julia -e 'import Pkg; Pkg.add("DataFrames")' && \
+    julia -e 'import Pkg; Pkg.add("Interact")' && \
+    julia -e 'import Pkg; Pkg.add("JSON")' && \
     julia -e 'using Pkg; pkg"add IJulia"; pkg"precompile"' && \
     # move kernelspec out of home \
     mv "${HOME}/.local/share/jupyter/kernels/julia"* "${CONDA_DIR}/share/jupyter/kernels/" && \
