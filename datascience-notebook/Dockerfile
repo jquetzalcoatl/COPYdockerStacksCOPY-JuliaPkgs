@@ -91,6 +91,13 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("DataFrames")' && \
     julia -e 'import Pkg; Pkg.add("Interact")' && \
     julia -e 'import Pkg; Pkg.add("JSON")' && \
+    julia -e 'import Pkg; Pkg.add("Atom")' && \
+    julia -e 'import Pkg; Pkg.add("Juno")' && \
+    julia -e 'import Pkg; Pkg.add("Flux")' && \
+    julia -e 'import Pkg; Pkg.add("CUDA")' && \
+    julia -e 'import Pkg; Pkg.add("DifferentialEquations")' && \
+    julia -e 'import Pkg; Pkg.add("LinearAlgebra")' && \
+    julia -e 'import Pkg; Pkg.add("Images")' && \
     julia -e 'using Pkg; pkg"add IJulia"; pkg"precompile"' && \
     # move kernelspec out of home \
     mv "${HOME}/.local/share/jupyter/kernels/julia"* "${CONDA_DIR}/share/jupyter/kernels/" && \
