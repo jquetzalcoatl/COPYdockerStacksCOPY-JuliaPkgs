@@ -94,8 +94,8 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("Atom")' && \
     julia -e 'import Pkg; Pkg.add("Juno")' && \
     julia -e 'import Pkg; Pkg.add("Flux")' && \
-    julia -e 'import Pkg; Pkg.add("CUDA"); pkg"precompile"' && \
-    julia -e 'import Pkg; Pkg.add("DifferentialEquations"); pkg"precompile"' && \
+    julia -e 'import Pkg; Pkg.add("CUDA")' && \
+    julia -e 'import Pkg; Pkg.add("DifferentialEquations")' && \
     julia -e 'import Pkg; Pkg.add("LinearAlgebra")' && \
     julia -e 'import Pkg; Pkg.add("Images")' && \
     julia -e 'using Pkg; pkg"add IJulia"; pkg"precompile"' && \
