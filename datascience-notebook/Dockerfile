@@ -33,8 +33,7 @@ ENV JULIA_DEPOT_PATH=/opt/julia \
     JULIA_VERSION="${julia_version}"
 
 
-WORKDIR /home/jovyan/
-#WORKDIR /tmp
+WORKDIR /tmp
 
 # hadolint ignore=SC2046
 #RUN mkdir "/opt/julia-${JULIA_VERSION}" && \
