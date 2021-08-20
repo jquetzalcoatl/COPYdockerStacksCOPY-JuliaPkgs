@@ -28,19 +28,30 @@ RUN apt-get update --yes && \
 
 # Julia dependencies
 # install Julia packages in /opt/julia instead of ${HOME}
-ENV JULIA_DEPOT_PATH=/opt/julia \
-    JULIA_PKGDIR=/opt/julia \
+#ENV JULIA_DEPOT_PATH=/opt/julia \
+#    JULIA_PKGDIR=/opt/julia \
+#    JULIA_VERSION="${julia_version}"
+ENV JULIA_DEPOT_PATH=/home/jtoledom/julia \
+    JULIA_PKGDIR=/home/jtoledom/julia \
     JULIA_VERSION="${julia_version}"
+
 
 WORKDIR /tmp
 
 # hadolint ignore=SC2046
-RUN mkdir "/opt/julia-${JULIA_VERSION}" && \
+#RUN mkdir "/opt/julia-${JULIA_VERSION}" && \
+#    wget -q https://julialang-s3.julialang.org/bin/linux/x64/$(echo "${JULIA_VERSION}" | cut -d. -f 1,2)"/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" && \
+#    echo "${julia_checksum} *julia-${JULIA_VERSION}-linux-x86_64.tar.gz" | sha256sum -c - && \
+#    tar xzf "julia-${JULIA_VERSION}-linux-x86_64.tar.gz" -C "/opt/julia-${JULIA_VERSION}" --strip-components=1 && \
+#    rm "/tmp/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" && \
+#    ln -fs /opt/julia-*/bin/julia /usr/local/bin/julia
+RUN mkdir "/home/jtoledom/julia-${JULIA_VERSION}" && \
     wget -q https://julialang-s3.julialang.org/bin/linux/x64/$(echo "${JULIA_VERSION}" | cut -d. -f 1,2)"/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" && \
     echo "${julia_checksum} *julia-${JULIA_VERSION}-linux-x86_64.tar.gz" | sha256sum -c - && \
-    tar xzf "julia-${JULIA_VERSION}-linux-x86_64.tar.gz" -C "/opt/julia-${JULIA_VERSION}" --strip-components=1 && \
+    tar xzf "julia-${JULIA_VERSION}-linux-x86_64.tar.gz" -C "/home/jtoledom/julia-${JULIA_VERSION}" --strip-components=1 && \
     rm "/tmp/julia-${JULIA_VERSION}-linux-x86_64.tar.gz" && \
-    ln -fs /opt/julia-*/bin/julia /usr/local/bin/julia
+    ln -fs /home/jtoledom/julia-*/bin/julia /usr/local/bin/julia
+
 
 # Show Julia where conda libraries are \
 RUN mkdir /etc/julia && \
