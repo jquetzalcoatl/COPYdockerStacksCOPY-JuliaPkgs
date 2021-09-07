@@ -30,6 +30,7 @@ RUN apt-get update --yes && \
 ENV JULIA_DEPOT_PATH=/opt/julia \
     JULIA_PKGDIR=/opt/julia \
     JULIA_VERSION="${julia_version}" \
+    JULIA_DEBUG=CUDA \
     JULIA_CUDA_USE_BINARYBUILDER=false
 
 WORKDIR /tmp
