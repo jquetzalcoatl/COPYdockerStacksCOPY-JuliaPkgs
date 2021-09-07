@@ -29,7 +29,7 @@ RUN apt-get update --yes && \
 # install Julia packages in /opt/julia instead of ${HOME}
 ENV JULIA_DEPOT_PATH=/opt/julia \
     JULIA_PKGDIR=/opt/julia \
-    JULIA_VERSION="${julia_version}"
+    JULIA_VERSION="${julia_version}" \
     JULIA_CUDA_USE_BINARYBUILDER=false
 
 WORKDIR /tmp
