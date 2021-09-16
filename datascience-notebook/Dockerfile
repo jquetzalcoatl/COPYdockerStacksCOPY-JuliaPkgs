@@ -113,6 +113,8 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("Atom")' && \
     julia -e 'import Pkg; Pkg.add("Juno")' && \
     julia -e 'import Pkg; Pkg.add("Flux")' && \
+    julia -e 'import Pkg; Pkg.add("BSON")' && \
+    julia -e 'import Pkg; Pkg.add("Dates")' && \
     julia -e 'import Pkg; Pkg.add(name="CUDA", rev="master")' && \
     julia -e 'import Pkg; Pkg.add("DifferentialEquations")' && \
     julia -e 'import Pkg; Pkg.add("LinearAlgebra")' && \
