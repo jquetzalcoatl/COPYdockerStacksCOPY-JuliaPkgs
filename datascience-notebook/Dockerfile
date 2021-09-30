@@ -115,7 +115,11 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("Flux")' && \
     julia -e 'import Pkg; Pkg.add("BSON")' && \
     julia -e 'import Pkg; Pkg.add("StatsBase")' && \
+    julia -e 'import Pkg; Pkg.add("DiffEqFlux")' && \
+    julia -e 'import Pkg; Pkg.add("DiffEqSensitivity")' && \
+    julia -e 'import Pkg; Pkg.add("ArgParse")' && \
     julia -e 'import Pkg; Pkg.add("Dates")' && \
+    julia -e 'import Pkg; Pkg.add("OrdinaryDiffEq")' && \
     julia -e 'import Pkg; Pkg.add(name="CUDA", rev="master")' && \
     julia -e 'import Pkg; Pkg.add("DifferentialEquations")' && \
     julia -e 'import Pkg; Pkg.add("LinearAlgebra")' && \
