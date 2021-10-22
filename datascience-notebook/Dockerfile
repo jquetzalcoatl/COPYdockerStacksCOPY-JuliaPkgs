@@ -132,4 +132,5 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     fix-permissions "${JULIA_PKGDIR}" "${CONDA_DIR}/share/jupyter"
 
 RUN conda install cuda -c nvidia
+RUN apt-get install git-lfs
 WORKDIR "${HOME}"
