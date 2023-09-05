@@ -16,7 +16,7 @@ jobs:
       !contains(github.event.pull_request.title, 'ci skip')
     steps:
       - name: Clone Main Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: main
       - name: Set Up Python
